@@ -1,73 +1,70 @@
+# Create and change to directory
+function mkcd {
+    if [ $# -ne 1 ]; then
+        echo "usage: mkcd directory_name"
+    elif [ -d "${1}" ]; then
+        echo "(directory already existed)"
+        cd "$1"
+    elif [ -e "${1}" ]; then
+        echo "file exists"
+    else
+        mkdir "${1}" && cd "${1}"
+    fi
+}
+
+# Remove empty working directory
+function rmwd {
+    if (shopt -s nullglob dotglob; f=(*); ((! ${#f[@]}))); then
+        # directory is empty
+        rmdir `"pwd"`
+        cd ..
+    else
+        echo "not empty"
+    fi
+}
+
+##################
+# SSH TO SERVERS #
+##################
+# alias server-name='ssh remote-id@remote.com'
+
+###############
+# CD PROJECTS #
+###############
+# alias project-name='cd ~/Projects/project-name'
+
 ###########
 # GENERAL #
 ###########
-alias home='cd ~' # the tilda is too hard to reach
-alias l='ls -lah' # l for list style, a for all including hidden, h for human readable file sizes
-alias h='history' # shortcut for history
-alias c='clear' # shortcut to clear your terminal
-alias ..='cd ..' # move up 1 dir
-alias ...='cd ../..' # move up 2 dirs
-alias ebash='mate -w ~/.bash_profile && source ~/.bash_profile' 
+alias home='cd ~'
+alias l='ls -lah'
+alias h='history'
+alias hg='history|grep'
+alias c='clear'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+alias dotfiles='cd ~/Documents/dotfiles; mate ~/Documents/dotfiles'
+alias learn='cd ~/Documents/Learning; mate ~/Documents/Learning'
+
+alias ebash='mate -w ~/.bash_profile && source ~/.bash_profile'
 alias eirb='mate -w ~/.irbrc && source ~/.irbrc'
 alias evim='mate -w ~/.vimrc && source ~/.vimrc'
-alias rbash='source ~/.bash_profile' 
+alias rbash='source ~/.bash_profile'
+
 alias gemup='sudo gem update' # gem update
 alias gemno='sudo gem install --no-rdoc --no-ri' # gem install
-alias porti='sudo port install' # macports install
 alias gl='gem list | egrep -v "^( |$)"' # gems list
 alias gv='gem ENV' # gems environment
+
+alias mk="make"
+alias mks="sudo make install"
+
+alias tracert='traceroute'
 alias dnsflush='dscacheutil -flushcache'
 alias wowcache='rm -rf /Applications/World\ of\ Warcraft/Cache'
 alias latency='sudo sysctl -w net.inet.tcp.delayed_ack=0'
 alias sassy='sass --watch public/stylesheets/sass:public/stylesheets'
-
-############
-# TEXTMATE #
-############
-alias e='mate . &' # open current dir
-alias et='mate README app/ config/ db/ lib/ public/ test/ vendor/plugins &' # open current dir assuming rails
-# cd /Applications/TextMate.app/Contents/SharedSupport/Bundles
-# svn co "http://macromates.com/svn/Bundles/trunk/Bundles/Ruby Haml.tmbundle"
-# svn co svn://rubyforge.org/var/svn/rspec/trunk/RSpec.tmbundle
-alias bundlepath="cd /Applications/TextMate.app/Contents/SharedSupport/Bundles"
-
-##########
-#  MISC  #
-##########
-alias learn='cd ~/Documents/Learning'
-
-#######
-# SVN #
-#######
-alias sup='svn up' # trust me 3 chars makes a different
-alias sst='svn st' # local file changes
-alias stu='svn st -u' # remote repository changes
-alias sco='svn commit -m' # commit
-alias svnclear='find . -name .svn -print0 | xargs -0 rm -rf' # removes all .svn folders from directory recursively
-alias svnaddall='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add' # adds all unadded files
-
-#######
-# GIT #
-#######
-alias gst='git status'
-alias gad='git add .'
-alias gps='git push'
-alias gcl='git clone'
-alias gd='git diff | mate'
-
-alias gup='git pull --rebase'
-alias gpl='git pull'
-alias gpom='git pull origin master'
-
-alias gto='git checkout'
-
-alias gc='git commit'
-alias gco='git commit -m'
-alias gvo='git commit -v'
-
-alias gb='git branch'
-alias gba='git branch -a'
-alias gdel='git branch -d'
 
 ########
 # RUBY #
@@ -75,16 +72,10 @@ alias gdel='git branch -d'
 # alias irb='irb -f --simple-prompt'
 # alias irb='irb --readline --simple-prompt -r irb/completion -rubygems' # use readline, completion and require rubygems by default for irb
 
-#########
-# WEBBY #
-#########
-alias wg='webby-gen website'
-alias wab='webby autobuild'
-alias wrb='webby rebuild'
-alias tds='thor deploy:scp'
-alias wcp='webby create:page'
-alias wcbk='webby create:book'
-alias wcbl='webby create:blog'
+# really awesome function, use: cdgem <gem name>, cd's into your gems directory and opens gem that best matches the gem name provided
+function cdgem {
+  cd /usr/local/rvm/gems/ruby-1.8.7-p334/gems; cd `ls|grep $1|sort|tail -1`
+}
 
 #########
 # RAILS #
@@ -114,6 +105,64 @@ alias tailf="tail -f log/development.log"
 alias cfn="cucumber features -n"
 alias bi="bundle install"
 
+############
+# TEXTMATE #
+############
+alias e='mate . &' # open current dir
+alias et='mate README app/ config/ db/ lib/ public/ test/ vendor/plugins &' # open current dir assuming rails
+# cd /Applications/TextMate.app/Contents/SharedSupport/Bundles
+# svn co "http://macromates.com/svn/Bundles/trunk/Bundles/Ruby Haml.tmbundle"
+# svn co svn://rubyforge.org/var/svn/rspec/trunk/RSpec.tmbundle
+alias bundlepath="cd /Applications/TextMate.app/Contents/SharedSupport/Bundles"
+
+##########
+#  MISC  #
+##########
+alias learn='cd ~/Documents/Learning'
+
+#######
+# GIT #
+#######
+alias gst='git status'
+alias gad='git add .'
+alias gps='git push'
+alias gcl='git clone'
+alias gd='git diff | mate'
+
+alias gup='git pull --rebase'
+alias gpl='git pull'
+alias gpom='git pull origin master'
+
+alias gto='git checkout'
+
+alias gc='git commit'
+alias gco='git commit -m'
+alias gvo='git commit -v'
+
+alias gb='git branch'
+alias gba='git branch -a'
+alias gdel='git branch -d'
+
+#######
+# SVN #
+#######
+alias sup='svn up' # trust me 3 chars makes a different
+alias sst='svn st' # local file changes
+alias stu='svn st -u' # remote repository changes
+alias sco='svn commit -m' # commit
+alias svnclear='find . -name .svn -print0 | xargs -0 rm -rf' # removes all .svn folders from directory recursively
+alias svnaddall='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add' # adds all unadded files
+
+#########
+# WEBBY #
+#########
+alias wg='webby-gen website'
+alias wab='webby autobuild'
+alias wrb='webby rebuild'
+alias tds='thor deploy:scp'
+alias wcp='webby create:page'
+alias wcbk='webby create:book'
+alias wcbl='webby create:blog'
 
 ##########
 # APACHE #

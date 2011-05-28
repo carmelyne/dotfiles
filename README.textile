@@ -1,11 +1,15 @@
-==
-ackrc
+h1. ackrc
 
-==
-bash_profile
+* *ACK*: "ACK Home":http://betterthangrep.com/
 
-== 
-irbrc
+h2. bash_profile
 
-==
-vimrc
+* *BASH SCRIPTING*: "Advanced Bash-Scripting Guide":http://tldp.org/LDP/abs/html/
+
+h2. irbrc
+
+* *Interactive Ruby Shell*: "@ Ruby Doc":http://www.ruby-doc.org/docs/ProgrammingRuby/html/irb.html
+
+h2. vimrc
+
+* *VIM*: "VIM":http://www.vim.org/ 
