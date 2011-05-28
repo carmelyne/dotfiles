@@ -123,6 +123,7 @@ alias vhost='sudo mate /private/etc/apache2/extra/httpd-vhosts.conf'
 alias apachestop='sudo apachectl graceful-stop'
 alias apachestart='sudo apachectl start'
 alias apacherestart='sudo apachectl restart'
+alias apacheprod='touch tmp/restart.txt'
 
 #########
 # MYSQL #
