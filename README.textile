@@ -1,0 +1,11 @@
+==
+ackrc
+
+==
+bash_profile
+
+== 
+irbrc
+
+==
+vimrc
