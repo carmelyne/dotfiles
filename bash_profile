@@ -33,6 +33,11 @@ function rmwd {
 ###############
 # alias project-name='cd ~/Projects/project-name'
 
+#################
+# GITHUB SETUP #
+################
+alias github4="git init; touch README; git add README; git commit -m 'first commit'"
+
 ###########
 # GENERAL #
 ###########
@@ -46,10 +51,12 @@ alias ...='cd ../..'
 
 alias dotfiles='cd ~/Documents/dotfiles; mate ~/Documents/dotfiles'
 alias learn='cd ~/Documents/Learning; mate ~/Documents/Learning'
+alias rlearn='cd ~/Documents/Ruby\ Learning/ruby-learning-batch-24; mate ~/Documents/Ruby\ Learning/ruby-learning-batch-24'
+alias html5="~/Documents/Html5boilerplate/sassed-html5boilerplate; mate ~/Documents/Html5boilerplate/sassed-html5boilerplate"
 
-alias ebash='mate -w ~/.bash_profile && source ~/.bash_profile'
-alias eirb='mate -w ~/.irbrc && source ~/.irbrc'
-alias evim='mate -w ~/.vimrc && source ~/.vimrc'
+alias ebash='mate -w ~/.bash_profile; source ~/.bash_profile'
+alias eirb='mate -w ~/.irbrc; source ~/.irbrc'
+alias evim='mate -w ~/.vimrc; source ~/.vimrc'
 alias rbash='source ~/.bash_profile'
 
 alias gemup='sudo gem update' # gem update
@@ -114,11 +121,6 @@ alias et='mate README app/ config/ db/ lib/ public/ test/ vendor/plugins &' # op
 # svn co "http://macromates.com/svn/Bundles/trunk/Bundles/Ruby Haml.tmbundle"
 # svn co svn://rubyforge.org/var/svn/rspec/trunk/RSpec.tmbundle
 alias bundlepath="cd /Applications/TextMate.app/Contents/SharedSupport/Bundles"
-
-##########
-#  MISC  #
-##########
-alias learn='cd ~/Documents/Learning'
 
 #######
 # GIT #
