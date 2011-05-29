@@ -71,7 +71,9 @@ alias tracert='traceroute'
 alias dnsflush='dscacheutil -flushcache'
 alias wowcache='rm -rf /Applications/World\ of\ Warcraft/Cache'
 alias latency='sudo sysctl -w net.inet.tcp.delayed_ack=0'
+
 alias sassy='sass --watch public/stylesheets/sass:public/stylesheets'
+alias sassup='sass --update public/stylesheets/sass:public/stylesheets'
 
 ########
 # RUBY #
@@ -171,6 +173,7 @@ alias wcbl='webby create:blog'
 ##########
 alias ehost='sudo mate /private/etc/hosts'
 alias vhost='sudo mate /private/etc/apache2/extra/httpd-vhosts.conf'
+
 alias apachestop='sudo apachectl graceful-stop'
 alias apachestart='sudo apachectl start'
 alias apacherestart='sudo apachectl restart'
