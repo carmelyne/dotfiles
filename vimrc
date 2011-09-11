@@ -39,6 +39,7 @@ set t_Co=256
 set history=1000
 set ignorecase
 set smartcase
+set ofu=syntaxcomplete#Complete
 
 " Additional Ruby Syntax Highlighting
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
