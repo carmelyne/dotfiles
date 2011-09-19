@@ -44,6 +44,9 @@ set ofu=syntaxcomplete#Complete
 " Additional Ruby Syntax Highlighting
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
+" Remove trailing spaces.
+autocmd BufWritePre * :%s/\s\+$//e
+
 " RDOC Syntax Highlighting
 autocmd BufRead,BufNewFile *.rd,*.rdoc     set filetype=rdoc
 
