@@ -13,12 +13,14 @@ filetype plugin indent on
 
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
+:inoremap ( ()<Esc>i
 
 set encoding=utf-8
 set tabstop=2
 set shiftwidth=2
 set smarttab
 set autoindent
+set smartindent
 set autoread
 set expandtab
 set showmatch
