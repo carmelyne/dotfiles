@@ -13,6 +13,8 @@ filetype plugin indent on
 
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
+
+" Automatically append closing parenthesis
 :inoremap ( ()<Esc>i
 
 set encoding=utf-8
