@@ -1,3 +1,7 @@
 --type-add=css=.scss
 --type-add=css=.sass
+--type-add=css=.less
 --type-add=ruby=.haml
+--type-add=html=.jade
+--type-add=javascript=.coffee
+--type-add=javascript=.tmpl
