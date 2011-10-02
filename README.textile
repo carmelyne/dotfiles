@@ -1,6 +1,6 @@
 h1. Features
 
-* *Pathogen*: "Pathogen GitHub":https://github.com/tpope/vim-pathogen by "Tim Pope":https://github.com/tpope
+* *Pathogen*: "Pathogen on GitHub":https://github.com/tpope/vim-pathogen by "Tim Pope":https://github.com/tpope
 * *ACK*: "ACK Home":http://betterthangrep.com/
 * *BASH SCRIPTING*: "Advanced Bash-Scripting Guide":http://tldp.org/LDP/abs/html/
 * *Interactive Ruby Shell*: "@ Ruby Doc":http://www.ruby-doc.org/docs/ProgrammingRuby/html/irb.html
