@@ -99,4 +99,3 @@ bc.. cp ~/dotfiles/vimrc ~/.vimrc
 p. Option 2: Symlink over the .vimrc file
 
 bc.. ln -s ~/dotfiles/vimrc ~/.vimrc
-
