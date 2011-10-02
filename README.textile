@@ -21,7 +21,8 @@ p. Create a file ~/.vim/update_bundles
 
 bc.. #!/usr/bin/env ruby
 
-git_bundles = [ 
+git_bundles = [
+  "git://github.com/mileszs/ack.vim.git",
   "git://github.com/anyakichi/vim-autoclose.git",
   "git://github.com/digitaltoad/vim-jade.git",
   "git://github.com/astashov/vim-ruby-debugger.git",
