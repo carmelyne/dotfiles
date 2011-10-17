@@ -1,4 +1,5 @@
 set nocompatible
+
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
  call pathogen#runtime_append_all_bundles()
@@ -17,33 +18,43 @@ set pastetoggle=<F2>
 " Automatically append closing parenthesis
 :inoremap ( ()<Esc>i
 
-set encoding=utf-8
-set tabstop=2
-set shiftwidth=2
-set smarttab
-set autoindent
-set smartindent
-set autoread
-set expandtab
-set showmatch
-set showcmd
-set showmode
-set number
-set ruler
-set incsearch
-set hlsearch
-set title
-set visualbell
-set nobackup
-set nowritebackup
-set directory=$HOME/.vim/tmp//,.
-set invlist
-set backspace=indent,eol,start
-set t_Co=256
-set history=1000
-set ignorecase
-set smartcase
-set ofu=syntaxcomplete#Complete
+set showcmd                       " Display incomplete commands.
+set showmode                      " Display the mode you're in.
+set backspace=indent,eol,start    " Intuitive backspacing.
+set hidden                        " Handle multiple buffers better.
+set wildmenu                      " Enhanced command line completion.
+set wildmode=list:longest         " Complete files like a shell.
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
+set number                        " Show line numbers.
+set ruler                         " Show cursor position.
+set incsearch                     " Highlight matches as you type.
+set hlsearch                      " Highlight matches.
+set wrap                          " Turn on line wrapping.
+set scrolloff=3                   " Show 3 lines of context around the cursor.
+set title                         " Set the terminal's title
+set visualbell                    " No beeping.
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+set encoding=utf-8                " Enabling UTF-8 Support
+set tabstop=2                     " Global tab width.
+set shiftwidth=2                  " And again, related.
+set expandtab                     " Use spaces instead of tabs
+set laststatus=2                  " Show the status line all the time
+set smarttab                      " Uses shiftwidth instead of tabstop at start of lines
+set autoindent                    " Does nothing more than copy the indentation from the previous line
+set smartindent                   " Automatically inserts one extra level of indentation in some cases, and works for C-like files
+set autoread                      " Automatically read the file again when it is changed outside of Vim
+set expandtab                     " To insert space characters whenever the tab key is pressed
+set showmatch                     " Highlights the matching braces|brackets|parenthesis when the cursor is on a bracket
+set matchtime=3                   " Showmatch for 3 milliseconds
+set magic                         " Allows pattern matching with special characters
+set textwidth=79                  " Limit all lines to a maximum of 79 characters
+set invlist                       " Invisible text is shown
+set t_Co=256                      " To enable 256 colors
+set history=1000                  " Keeps a thousand lines of history
+set ofu=syntaxcomplete#Complete   " To turn on omnicompletion
 
 " Additional Ruby Syntax Highlighting
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
@@ -66,9 +77,9 @@ if &statusline == ''
 end
 
 " ACK integration
-set grepprg=ack-grep
-set grepformat=%f:%l:%m
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+" set grepprg=ack-grep
+" set grepformat=%f:%l:%m
+" let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " Find searched_string in directories(...)
 function RailsGrep(searched_string,...)
