@@ -11,6 +11,7 @@ h1. Install
 p. Install Pathogen to manage the VIM plugins
 
 bc.. mkdir -p ~/.vim/autoload
+cd ~/.vim/autoload
 wget https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 
