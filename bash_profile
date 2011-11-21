@@ -49,7 +49,7 @@ alias c='clear'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-alias dotfiles='cd ~/Documents/dotfiles; mate ~/Documents/dotfiles'
+alias dotfiles='cd ~/dotfiles; mate ~/dotfiles'
 alias learn='cd ~/Documents/Learning; mate ~/Documents/Learning'
 alias rlearn='cd ~/Documents/Ruby\ Learning/ruby-learning-batch-24; mate ~/Documents/Ruby\ Learning/ruby-learning-batch-24'
 alias html5="~/Documents/Html5boilerplate/sassed-html5boilerplate; mate ~/Documents/Html5boilerplate/sassed-html5boilerplate"
@@ -213,3 +213,8 @@ export GREP_OPTIONS='--color=auto'
 export HISTSIZE=1000
 export HISTFILESIZE=1000
 export VISUAL='mate -w'
+
+#####################
+# Load RVM function #
+#####################
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
