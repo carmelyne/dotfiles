@@ -6,7 +6,7 @@ h1. Features
 * *Interactive Ruby Shell*: "@ Ruby Doc":http://www.ruby-doc.org/docs/ProgrammingRuby/html/irb.html
 * *VIM*: "VIM":http://www.vim.org/ 
 
-h1. Install
+h1. Setting up Vim
 
 p. Install Pathogen to manage the VIM plugins
 
