@@ -83,7 +83,18 @@ alias sassup='sass --update public/stylesheets/sass:public/stylesheets'
 
 # really awesome function, use: cdgem <gem name>, cd's into your gems directory and opens gem that best matches the gem name provided
 function cdgem {
-  cd /usr/local/rvm/gems/ruby-1.8.7-p334/gems; cd `ls|grep $1|sort|tail -1`
+  cd ~/.rvm/gems/ruby-1.9.2-p290/gems; cd `ls|grep $1|sort|tail -1`
+}
+
+# gemdir function
+function gemdir {
+  if [[ -z "$1" ]] ; then
+    echo "gemdir expects a parameter, which should be a valid RVM Ruby selector"
+  else
+    rvm "$1"
+    cd $(rvm gemdir)
+    pwd
+  fi
 }
 
 #########
