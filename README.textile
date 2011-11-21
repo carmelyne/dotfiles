@@ -20,6 +20,8 @@ p. Use "Tammer Saleh script":http://tammersaleh.com/posts/the-modern-vim-config-
 
 p. Create a file ~/.vim/update_bundles
 
+bc.. touch ~/.vim/update_bundles.rb
+
 bc.. #!/usr/bin/env ruby
 
 git_bundles = [
