@@ -102,3 +102,8 @@ bc.. cp ~/dotfiles/vimrc ~/.vimrc
 p. Option 2: Symlink over the .vimrc file
 
 bc.. ln -s ~/dotfiles/vimrc ~/.vimrc
+
+p. Color Scheme (Railscast / Idlefingers 256)
+
+bc.. http://www.vim.org/scripts/script.php?script_id=2175
+Install this file as ~/.vim/colors/railscasts.vim
