@@ -23,6 +23,8 @@ function rmwd {
     fi
 }
 
+
+
 ##################
 # SSH TO SERVERS #
 ##################
@@ -64,8 +66,12 @@ alias gemno='sudo gem install --no-rdoc --no-ri' # gem install
 alias gl='gem list | egrep -v "^( |$)"' # gems list
 alias gv='gem ENV' # gems environment
 
-alias mk="make"
-alias mks="sudo make install"
+alias killfinder='killall Finder'
+alias nohide='defaults write com.apple.Finder AppleShowAllFiles TRUE'
+alias hide='defaults write com.apple.Finder AppleShowAllFiles FALSE'
+
+alias mk='make'
+alias mks='sudo make install'
 
 alias tracert='traceroute'
 alias dnsflush='dscacheutil -flushcache'
