@@ -211,6 +211,9 @@ export PATH=/usr/local/mysql/bin:$PATH
 # Add /usr/local/bin to PATH
 export PATH=/usr/local/bin:$PATH
 
+# Add Node to PATH
+export NODE_PATH=/usr/local/lib/node_modules/npm/node_modules:$PATH
+
 ####################
 # SERVER SHORTCUTS #
 ####################
