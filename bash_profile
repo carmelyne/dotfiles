@@ -24,11 +24,16 @@ function rmwd {
 }
 
 
-
 ##################
 # SSH TO SERVERS #
 ##################
 # alias server-name='ssh remote-id@remote.com'
+
+# Private
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
 
 ###############
 # CD PROJECTS #
