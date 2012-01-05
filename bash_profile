@@ -56,6 +56,7 @@ alias c='clear'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias sites='cd ~/Sites'
 alias dotfiles='cd ~/dotfiles; mate ~/dotfiles'
 alias learn='cd ~/Documents/Learning; mate ~/Documents/Learning'
 alias rlearn='cd ~/Documents/Ruby\ Learning/ruby-learning-batch-24; mate ~/Documents/Ruby\ Learning/ruby-learning-batch-24'
