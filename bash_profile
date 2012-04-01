@@ -244,3 +244,19 @@ export VISUAL='mate -w'
 # Load RVM function #
 #####################
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+
+########
+# Coda #
+########
+# set path
+export CODA_PATH=/Applications/Coda.app
+# function roughly like 'mate .' by expanding '.' to '*.htm*'
+coda () {
+if [[ "." == $1 ]]
+then
+    open -a $CODA_PATH *.htm*
+else
+    open -a $CODA_PATH $1 $2 $3
+fi
+}
