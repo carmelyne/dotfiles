@@ -255,8 +255,6 @@ export CODA_PATH=/Applications/Coda.app
 coda () {
 if [[ "." == $1 ]]
 then
-    open -a $CODA_PATH *.htm*
-else
     open -a $CODA_PATH $1 $2 $3
 fi
 }
