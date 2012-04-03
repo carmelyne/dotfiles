@@ -79,6 +79,7 @@ alias hide='defaults write com.apple.Finder AppleShowAllFiles FALSE'
 alias mk='make'
 alias mks='sudo make install'
 
+alias ip='curl ifconfig.me'
 alias tracert='traceroute'
 alias dnsflush='dscacheutil -flushcache'
 alias wowcache='rm -rf /Applications/World\ of\ Warcraft/Cache'
