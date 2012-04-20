@@ -88,6 +88,8 @@ alias latency='sudo sysctl -w net.inet.tcp.delayed_ack=0'
 alias sassy='sass --watch public/stylesheets/sass:public/stylesheets'
 alias sassup='sass --update public/stylesheets/sass:public/stylesheets'
 
+alias projects='cd ~/Desktop/CX2\ Media/Projects/Corona\ Projects'
+
 ########
 # RUBY #
 ########
