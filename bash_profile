@@ -73,8 +73,8 @@ alias gl='gem list | egrep -v "^( |$)"' # gems list
 alias gv='gem ENV' # gems environment
 
 alias killfinder='killall Finder'
-alias nohide='defaults write com.apple.Finder AppleShowAllFiles TRUE'
-alias hide='defaults write com.apple.Finder AppleShowAllFiles FALSE'
+alias nohide='defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder && open /System/Library/CoreServices/Finder.app'
+alias hide='defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder && open /System/Library/CoreServices/Finder.app'
 
 alias mk='make'
 alias mks='sudo make install'
@@ -89,6 +89,8 @@ alias sassy='sass --watch public/stylesheets/sass:public/stylesheets'
 alias sassup='sass --update public/stylesheets/sass:public/stylesheets'
 
 alias projects='cd ~/Desktop/CX2\ Media/Projects/Corona\ Projects'
+
+alias mpq='/Applications/MPQExtractor/build/bin/MPQExtractor'
 
 ########
 # RUBY #
