@@ -48,6 +48,7 @@ alias github4="git init; touch README; git add README; git commit -m 'first comm
 ###########
 # GENERAL #
 ###########
+alias csdk='/Applications/CoronaSDK/Corona\ Terminal ; exit;'
 alias home='cd ~'
 alias l='ls -lah'
 alias h='history'
@@ -72,7 +73,7 @@ alias gemno='sudo gem install --no-rdoc --no-ri' # gem install
 alias gl='gem list | egrep -v "^( |$)"' # gems list
 alias gv='gem ENV' # gems environment
 
-alias killfinder='killall Finder'
+
 alias nohide='defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder && open /System/Library/CoreServices/Finder.app'
 alias hide='defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder && open /System/Library/CoreServices/Finder.app'
 
@@ -81,16 +82,24 @@ alias mks='sudo make install'
 
 alias ip='curl ifconfig.me'
 alias tracert='traceroute'
-alias dnsflush='dscacheutil -flushcache'
+# alias dnsflush='dscacheutil -flushcache'
+alias dnsflush='sudo killall -HUP mDNSResponder'
 alias wowcache='rm -rf /Applications/World\ of\ Warcraft/Cache'
 alias latency='sudo sysctl -w net.inet.tcp.delayed_ack=0'
+alias d3="open /Applications/Diablo\ III/Diablo\ III.app --args -launch"
 
 alias sassy='sass --watch public/stylesheets/sass:public/stylesheets'
 alias sassup='sass --update public/stylesheets/sass:public/stylesheets'
 
 alias projects='cd ~/Desktop/CX2\ Media/Projects/Corona\ Projects'
 
-alias mpq='/Applications/MPQExtractor/build/bin/MPQExtractor'
+alias killui="killall SystemUIServer"
+alias killfinder='killall Finder'
+alias killchrome="killall Google\ Chrome"
+alias killmail="sudo chmod 000 /Applications/Mail.app/Contents/MacOS/Mail"
+
+alias revivemail="sudo chmod 755 /Applications/Mail.app/Contents/MacOS/Mail"
+alias chromecss="cd ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets"
 
 ########
 # RUBY #
@@ -255,7 +264,7 @@ export VISUAL='mate -w'
 # Coda #
 ########
 # set path
-export CODA_PATH=/Applications/Coda.app
+export CODA_PATH=/Applications/Coda.app:$PATH
 # function roughly like 'mate .' by expanding '.' to '*.htm*'
 coda () {
 if [[ "." == $1 ]]
@@ -263,3 +272,8 @@ then
     open -a $CODA_PATH $1 $2 $3
 fi
 }
+
+#####################
+# Android SDK TOOLS #
+#####################
+PATH=${PATH}:~/Desktop/Android/adt-bundle-mac-x86_64-20130219/sdk/platform-tools
