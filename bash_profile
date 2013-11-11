@@ -85,21 +85,34 @@ alias tracert='traceroute'
 # alias dnsflush='dscacheutil -flushcache'
 alias dnsflush='sudo killall -HUP mDNSResponder'
 alias wowcache='rm -rf /Applications/World\ of\ Warcraft/Cache'
+alias wownamed='rm -rf /Applications/World\ of\ Warcraft/Cache/WDB/enUS/creaturecache.wdb'
 alias latency='sudo sysctl -w net.inet.tcp.delayed_ack=0'
 alias d3="open /Applications/Diablo\ III/Diablo\ III.app --args -launch"
+alias wow="rm -rf /Applications/World\ of\ Warcraft/Cache/WDB/enUS/creaturecache.wdb; open /Applications/World\ of\ Warcraft/World\ of\ Warcraft\ Launcher.app"
 
 alias sassy='sass --watch public/stylesheets/sass:public/stylesheets'
 alias sassup='sass --update public/stylesheets/sass:public/stylesheets'
 
 alias projects='cd ~/Desktop/CX2\ Media/Projects/Corona\ Projects'
 
+alias killhog="killall Finder; killall tcpblock; killall SystemUIServer; killall CalendarAgent"
 alias killui="killall SystemUIServer"
 alias killfinder='killall Finder'
-alias killchrome="killall Google\ Chrome"
-alias killmail="sudo chmod 000 /Applications/Mail.app/Contents/MacOS/Mail"
 
+alias killchrome="killall Google\ Chrome"
+alias chromecss="cd ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets; open ."
+alias getchromecss="curl -o ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.css https://raw.github.com/mauricecruz/chrome-devtools-zerodarkmatrix-theme/master/Custom-Stable.css"
+
+alias killmail="sudo chmod 000 /Applications/Mail.app/Contents/MacOS/Mail"
 alias revivemail="sudo chmod 755 /Applications/Mail.app/Contents/MacOS/Mail"
-alias chromecss="cd ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets"
+
+alias googlefonts="cd /Volumes/USB\ External/Fonts/GoogleFontsGithub && git pull"
+alias usbdrive="cd /Volumes/USB\ External/"
+
+########
+# BREW #
+########
+alias brewupdate="brew update; brew list | xargs brew upgrade"
 
 ########
 # RUBY #
@@ -232,7 +245,10 @@ export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # Add Node to PATH
-export NODE_PATH=/usr/local/lib/node_modules/npm/node_modules:$PATH
+#export NODE_PATH=/usr/local/lib/node_modules/npm/node_modules:$PATH
+#export Path for Node installed via brew
+export NODE_PATH=/usr/local/lib/node:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 
 ####################
 # SERVER SHORTCUTS #
